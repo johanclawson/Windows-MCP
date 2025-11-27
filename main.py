@@ -43,7 +43,7 @@ mcp=FastMCP(name='windows-mcp',instructions=instructions,lifespan=lifespan)
     annotations=ToolAnnotations(
         title="App Tool",
         readOnlyHint=False,
-        destructiveHint=False,
+        destructiveHint=True,
         idempotentHint=False,
         openWorldHint=False
     )
@@ -72,6 +72,8 @@ def powershell_tool(command: str) -> str:
     annotations=ToolAnnotations(
         title="State Tool",
         readOnlyHint=True,
+        destructiveHint=False,
+        idempotentHint=True,
         openWorldHint=False
     )
     )
@@ -211,6 +213,8 @@ def shortcut_tool(shortcut:str):
     annotations=ToolAnnotations(
         title="Wait Tool",
         readOnlyHint=True,
+        destructiveHint=False,
+        idempotentHint=True,
         openWorldHint=False
     )
     )
@@ -224,6 +228,8 @@ def wait_tool(duration:int)->str:
     annotations=ToolAnnotations(
         title="Scrape Tool",
         readOnlyHint=True,
+        destructiveHint=False,
+        idempotentHint=True,
         openWorldHint=True
     )
     )
